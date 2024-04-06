@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 9090;
 
 //! cors
 const corsOptions = {
-    origin: ["https://chatbot-openai-x2sf.vercel.app", "https://chatbot-openai-x2sf.vercel.app"],
+    origin: ["https://chatbot-openai-x2sf.vercel.app", "https://chatbot-openai-x2sf.vercel.app/"],
+    methods: "POST",
 };
 app.use(cors(corsOptions));
 
