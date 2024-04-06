@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import OpenAI from "openai";
 import express from "express";
+import cors from "cors";
 dotenv.config();
 // Authenticated with api key
 const openai = new OpenAI({
@@ -10,6 +11,12 @@ const app = express();
 //! passing incoming json data
 app.use(express.json());
 const PORT = process.env.PORT || 9090;
+
+//! cors
+const corsOptions = {
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+};
+app.use(cors(corsOptions));
 
 //! global variable to hold the conservation history
 let conservationHistory = [
