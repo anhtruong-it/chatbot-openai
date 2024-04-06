@@ -8,7 +8,7 @@ import { MdScheduleSend } from "react-icons/md";
 
 // function to make the http request (useMutation)
 const sendMessageAPI = async (message) => {
-    const res = await axios.post("http://localhost:9090/ask", { message });
+    const res = await axios.post("https://chatbot-openai-lac.vercel.app/", { message });
     return res.data;
 };
 
